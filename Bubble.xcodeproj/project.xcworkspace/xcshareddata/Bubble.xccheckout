@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>34335BD6-B671-48A3-AF81-E4E9CEE3B9E0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Bubble</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>9ECC42D8-21C4-4B52-88BA-4E02C2D09374</key>
+		<string>https://github.com/Li-Qun/Bubble.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Bubble.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>9ECC42D8-21C4-4B52-88BA-4E02C2D09374</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/Li-Qun/Bubble.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>9ECC42D8-21C4-4B52-88BA-4E02C2D09374</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>9ECC42D8-21C4-4B52-88BA-4E02C2D09374</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Bubble</string>
+		</dict>
+	</array>
+</dict>
+</plist>
