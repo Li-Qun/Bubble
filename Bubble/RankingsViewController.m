@@ -26,7 +26,7 @@
 }
 -(void)InitEverything
 {
-    scrollView_RankList=[[UIScrollView alloc]initWithFrame:CGRectMake(Height/9+80, 45, Height-(Height/9+80)*2, 320-80)];
+    scrollView_RankList=[[UIScrollView alloc]initWithFrame:CGRectMake(Height/9+80, 45, Height-(Height/9+80)*2, KWidth-80)];
     
 }
 - (void)viewDidLoad

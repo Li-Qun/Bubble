@@ -44,14 +44,14 @@
 -(void)mentionView:(int)Tag//三种玩法 示意图
 {
     
-    view_gameSelect=[[UIView alloc]initWithFrame:CGRectMake(0, 0, Height, 320)];
+    view_gameSelect=[[UIView alloc]initWithFrame:CGRectMake(0, 0, Height, KWidth)];
     view_gameSelect.backgroundColor=[UIColor blackColor];
 //    UIView *ad_View=[[UIView alloc]initWithFrame:CGRectMake(0, 0,Height, 45)];
 //    ad_View.backgroundColor=[UIColor blueColor];
 //    [view_gameSelect addSubview:ad_View];
     [self.view addSubview:view_gameSelect];
   
-    UITextView *textView=[[UITextView alloc]initWithFrame:CGRectMake(Height/10, 60, 250, 320-80)];
+    UITextView *textView=[[UITextView alloc]initWithFrame:CGRectMake(Height/10, 60, 250, KWidth-80)];
     textView.backgroundColor=[UIColor clearColor];
     textView.textColor=[UIColor whiteColor];
     //textView.textAlignment=NSTextAlignmentCenter;
@@ -107,6 +107,7 @@
         button_Num.tag=100+i;
         [button_Num addTarget:self action:@selector(GameSelect_Buttons:) forControlEvents:UIControlEventTouchDown];//点击一次就响应
         [button_Num setBackgroundImage: [UIImage imageNamed:@"white_button.png"] forState:UIControlStateHighlighted];
+    
         UILabel *label_Num=[[UILabel alloc]initWithFrame:CGRectMake(0, 0, 80, 80)];
         label_Num.backgroundColor=[UIColor clearColor];
         label_Num.textColor=[UIColor whiteColor];

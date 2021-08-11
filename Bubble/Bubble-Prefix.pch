@@ -14,9 +14,9 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 
-#define VIEW_HEIGHT         [UIScreen mainScreen].bounds.size.height - [UIApplication sharedApplication].statusBarFrame.size.height -44
-#define Height  [UIScreen mainScreen].bounds.size.height
-
+#define VIEW_HEIGHT         [UIScreen mainScreen].bounds.size.width - [UIApplication sharedApplication].statusBarFrame.size.height -44
+#define Height  [UIScreen mainScreen].bounds.size.width
+#define KWidth  [UIScreen mainScreen].bounds.size.height
 
 #define  Green   [UIColor colorWithPatternImage:[UIImage imageNamed:@"green.png"]]  // [UIColor colorWithRed:103.0/255.0 green:217.0/255.0  blue:67.0/255.0 alpha:1.0 ]
 //103 217 67

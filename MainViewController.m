@@ -17,7 +17,7 @@
 #define PI 3.14159265358979323846
 
 
-#define Height  [UIScreen mainScreen].bounds.size.height
+//#define Height  [UIScreen mainScreen].bounds.size.height
 #define SIZE 10
 #define Image 200
 #define Accuracy 1.5
@@ -58,7 +58,7 @@
 }
 -(CGRect)x:(float)x y:(float)y//竖屏
 {
-    int core_x=320/2;
+    int core_x=KWidth/2;
     int core_y=Height/2;
     
     if(x<core_x&&y<core_y)//左上
@@ -110,7 +110,7 @@
 -(CGRect)XX:(float)x YY:(float)y//横屏
 {
     
-    int core_x=320/2;
+    int core_x=KWidth/2;
     int core_y=Height/2;
     if(x<core_x&&y<core_y)//左上
     {
@@ -239,7 +239,7 @@
     array=[[NSArray alloc]initWithObjects:@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",nil];
     imageView=[[UIImageView alloc]init];
     imageView.image=[UIImage imageNamed:@"Bubble.png"];
-    [self.view addSubview:imageViewTwo];
+    [self.view addSubview:imageView];
     imageViewTwo=[[UIImageView alloc]init];
     imageViewTwo.image=[UIImage imageNamed:@"Bubble.png"];
     [self.view addSubview:imageViewTwo];
@@ -287,7 +287,7 @@
 }
 -(void)AreYouReady
 {
-    view_Ready=[[UIView alloc]initWithFrame:CGRectMake(0, 0, Height, 320)];
+    view_Ready=[[UIView alloc]initWithFrame:CGRectMake(0, 0, Height, KWidth)];
     view_Ready.backgroundColor=[UIColor blackColor];
     [self.view addSubview:view_Ready];
     UIButton *button=[UIButton buttonWithType:UIButtonTypeCustom];
@@ -346,13 +346,13 @@
     
     
     //滚动图片
-    UIScrollView *scrollView_Pose=[[UIScrollView alloc]initWithFrame:CGRectMake(Height/2,0, Height/2, 320)];
+    UIScrollView *scrollView_Pose=[[UIScrollView alloc]initWithFrame:CGRectMake(Height/2,0, Height/2, KWidth)];
     scrollView_Pose.backgroundColor=[UIColor clearColor];
-    scrollView_Pose.contentSize=CGSizeMake(0, 320*14);
+    scrollView_Pose.contentSize=CGSizeMake(0, KWidth*14);
     scrollView_Pose.delegate=self;
     for(int i=0;i<14;i++)
     {
-        UIImageView *imageView_scroll=[[UIImageView alloc]initWithFrame:CGRectMake(0, (320)*i, Height/2, 320)];
+        UIImageView *imageView_scroll=[[UIImageView alloc]initWithFrame:CGRectMake(0, (KWidth)*i, Height/2, KWidth)];
         [imageView_scroll setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%d.png",i+10]]];
        imageView_scroll.backgroundColor=[UIColor clearColor];
         [scrollView_Pose addSubview:imageView_scroll];
@@ -449,7 +449,8 @@
     isStop=NO;
     startTime=[self getTimeNow];
     
-    
+    [self.view addSubview:imageView];
+    [self.view addSubview:imageViewTwo];
     
     [motionManager startAccelerometerUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMAccelerometerData *accelerometerData, NSError *error)
      {
@@ -489,20 +490,18 @@
                  f.origin.x = 0-Image/2;
              if(f.origin.y < 0-Image/2)
                  f.origin.y = 0-Image/2;
-             if(f.origin.x>=320-Image/2)f.origin.x=320-Image/2;
+             if(f.origin.x>=KWidth-Image/2)f.origin.x=KWidth-Image/2;
              if(f.origin.y>=Height-Image/2)f.origin.y=Height-Image/2;
              
              /* 运动动画 */
-             [UIView beginAnimations:nil context:nil];
-             [UIView setAnimationDuration:0.1];
+//             [UIView beginAnimations:nil context:nil];
+//             [UIView setAnimationDuration:0.1];
              imageView.frame=CGRectMake(f.origin.y,f.origin.x, Image, Image);
              //   CGRect rect=[self x:f.origin.x+Image/2 y:f.origin.y+Image/2];
              CGRect rect=[self XX:f.origin.x+Image/2 YY:f.origin.y+Image/2];
              
              
              imageViewTwo.frame=CGRectMake(rect.size.height-Image/2,rect.size.width-Image/2, Image, Image);
-             [self.view addSubview:imageView];
-             [self.view addSubview:imageViewTwo];
              
              float P=(imageView.center.x-imageViewTwo.center.x)*(imageView.center.x-imageViewTwo.center.x)-(imageView.center.y-imageViewTwo.center.y)*(imageView.center.y-imageViewTwo.center.y);
              if(P>=0&&P<=Accuracy)
@@ -656,7 +655,7 @@
 #pragma mark -ScrollView Delegate
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    //label_scroll.text=[array objectAtIndex:scrollView.contentOffset.y/320];
+    //label_scroll.text=[array objectAtIndex:scrollView.contentOffset.y/KWidth];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -693,7 +692,7 @@
 }
 
 - (void)updateBubbleForAngle:(float)angle {
-    float halfVialLength = 320.0 / 2;
+    float halfVialLength = KWidth / 2;
     float zoomAngle = angle * 4 ;  // real bubble floats up more rapidly than sine function
     
     if (zoomAngle > kMaxAngle) zoomAngle = kMaxAngle ;   // stop at the end
